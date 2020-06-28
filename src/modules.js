@@ -19,7 +19,7 @@ const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('ramda-adjunct') + 
 
 // We do not need to change the search path based on useES since src and es are both built from the
 // same source in Ramda, and the directories will therefore always have identical contents.
-var methods = fs.readdirSync(path.join(ramdaPath, 'src'))
+var methods = fs.readdirSync(path.join(ramdaPath, 'lib'))
     .filter(name => path.extname(name) == '.js')
     .map(name => path.basename(name, '.js'));
 
@@ -27,7 +27,7 @@ export default function resolveModule(useES, name) {
 
   for (var category in methods) {
     if (contains(name, methods)) {
-      return `ramda-adjunct/${useES ? 'es' : 'src'}/${name}`;
+      return `ramda-adjunct/${useES ? 'es' : 'lib'}/${name}`;
     }
   }
   throw new Error(`ramda-adjunct method ${name} was not a known function
