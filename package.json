@@ -1,5 +1,5 @@
 {
-  "name": "babel-plugin-amda-adjunct",
+  "name": "babel-plugin-ramda-adjunct",
   "version": "1.0.0",
   "description": "Ramda modularized builds without the hassle",
   "repository": "331000738/babel-plugin-amda-adjunct",
